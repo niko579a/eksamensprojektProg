@@ -50,6 +50,13 @@ class Soldier extends Movement{
         position.x += moveSpeed;
       }
     }
+    
+    if(currentHeight < jumpMaxHeight && isOnPlatform == false){
+      position.add(velocity);
+      currentHeight += jumpSpeed;
+    }else{
+      position.add(gravity);
+    }
   }
   
   void stayOnScreen(){ //HUSK RET BUG
@@ -61,17 +68,17 @@ class Soldier extends Movement{
   }
   
   void jump(){
-    //if(isOnPlatform == true){
-     //   }  
     if(key == ' '){
       if(isOnPlatform == true){
-        isOnPlatform = false;
-      }
-      
-      if(currentHeight < jumpMaxHeight){
-        position.add(velocity);
-        currentHeight += jumpSpeed;
+        if(isOnPlatform == true){
+          isOnPlatform = false;
+        }
       }
     }
-  }
+    
+    if(currentHeight < jumpMaxHeight){
+      position.add(velocity);
+      currentHeight += jumpSpeed;
+     }
+   }
 }
