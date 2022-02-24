@@ -24,5 +24,3 @@ void keyReleased(){
     verden.player.isMoving = false;  
   }
 }
-
-//næste gang: fortsæt hop, tjek om man er på platform.

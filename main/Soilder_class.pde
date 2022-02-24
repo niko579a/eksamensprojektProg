@@ -1,13 +1,13 @@
 class Soldier extends Movement{
   float jumpSpeed = 8;
-  float currentHeight = 0; 
+  float currentHeight = 0; //hvor højt han er i hoppet. 
   float jumpMaxHeight = 80;
   
   PImage soldat;
   
   boolean isMoving = false; //tjekker om spilleren bevæger sig
   boolean isMovingLeft = false; //hvis false bevæger man sig til højre,tjekker om man går til venstre. 
-  boolean isOnPlatform = true;
+  boolean isOnPlatform = false;
   boolean reachedMaxJumpH = false;
   
   Soldier(float x_, float y_){
@@ -51,11 +51,13 @@ class Soldier extends Movement{
       }
     }
     
-    if(currentHeight < jumpMaxHeight && isOnPlatform == false){
-      position.add(velocity);
-      currentHeight += jumpSpeed;
+    if(currentHeight < jumpMaxHeight && isOnPlatform == true){
+      //position.add(velocity);
+      //currentHeight += jumpSpeed;
     }else{
-      position.add(gravity);
+      if(isOnPlatform == false){
+        position.add(gravity);
+      }
     }
   }
   

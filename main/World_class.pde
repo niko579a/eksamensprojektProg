@@ -9,7 +9,7 @@ class World{
   Platform groundPlatform; //den usynlige linje i bunden 
   
   World(){
-    player = new Soldier(150, 450);
+    player = new Soldier(150, 300);
     groundPlatform = new Platform(-100, 650, 1600);
     groundPlatform.showPlatform = false; 
     allPlatforms.add(groundPlatform); //tilføjer linjen i bunden til arraylisten
@@ -27,5 +27,10 @@ class World{
   
   void update(){
     player.update(gravity);
+    
+    for(int i = 0; i < allPlatforms.size(); i++){
+      Platform currentPlatform = allPlatforms.get(i);
+      currentPlatform.isSoldierOnPlatform(player);
+    }
   }
 }

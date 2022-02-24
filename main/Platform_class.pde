@@ -19,4 +19,14 @@ class Platform{
     }
   }
   
+  void isSoldierOnPlatform(Soldier player){
+    float playerFeetX = player.position.x;
+    float playerFeetY = player.position.y + 200;
+    
+    if((playerFeetX + 125) >= x && playerFeetX <= (x + w) && playerFeetY >= y && playerFeetY <= (y + h)){
+      player.isOnPlatform = true;
+      player.currentHeight = 0;
+      player.position.y = y - 190;
+    }
+  }
 }
