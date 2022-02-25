@@ -14,6 +14,8 @@ class World{
     groundPlatform.showPlatform = false; 
     allPlatforms.add(groundPlatform); //tilføjer linjen i bunden til arraylisten
     baggrund = loadImage("world.png");
+    Platform platform1 = new Platform(500, 550, 100); 
+    allPlatforms.add(platform1);
   }
   
   void display(){
