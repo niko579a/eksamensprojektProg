@@ -13,7 +13,7 @@ class Platform{
   }
   
   void display(){
-    if(showPlatform == true){
+    if(showPlatform == false){
       fill(0);
       rect(x, y, w, h);
     }
